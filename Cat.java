@@ -21,8 +21,25 @@ public class Cat
 	}
 	public void speak()
 	{
-		ImageIcon icon = new ImageIcon("Persian-icon.png");
-		JLabel label = new JLabel("Meow", icon, JLabel.CENTER);
+		ImageIcon icon = null;
+		if(breed.equals("Persian"))
+		{
+			icon = new ImageIcon("Persian-icon.png");
+		}
+		else if(breed.equals("Siamese"))
+		{
+			icon = new ImageIcon("Siamese-icon.png");
+		}
+		else if(breed.equals("Sphynx"))
+		{
+			icon = new ImageIcon("Sphynx-icon.png");
+		}
+		else
+		{
+			icon = new ImageIcon("Tabby-icon.png");
+		}
+		String words = "My name is " + name + ", feed me! Meow.";
+		JLabel label = new JLabel(words, icon, JLabel.CENTER);
 		JOptionPane.showMessageDialog(null, label);
 	}
 	public void setBreed(String breed)
